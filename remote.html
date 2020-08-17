@@ -1,0 +1,328 @@
+<html>
+    <head>
+        <title>Remote</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/9ee4d5cfa0.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=.9, maximum-scale=.9">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+        <style>
+            .container{
+                padding:10px;
+                width:380px;
+                margin:0 auto;
+                background-color: black;
+            }
+
+            body{
+                padding: 0;
+                margin: 0;
+                background-color: rgba(0,0,0,0.1);
+                font-family: 'Titillium Web', sans-serif;
+            }
+
+            .header{
+                width: 360px;
+                height: 75px;
+            }
+            .numbers{
+                width: 360px;
+                height: 295px;
+                font-size: 40px;
+                text-align: center;
+            }
+            .adjust{
+                width: 360px;
+                height: 175px;
+                font-size: 40px;
+                text-align: center;
+
+            }
+
+            
+
+            .buttons{
+                width: 360px;
+                height: 135px;
+                background-color: black;
+                font-size: 18px;
+                text-align: center;
+            }
+            .clicked {
+                border: 1px solid rgb(0,0,0);
+                box-shadow: 0 0 2px 0 rgb(0,0,0);
+            }
+
+
+
+            .adjustBox{
+                height: 75px;
+                width: 60px;
+                background-color: lightblue;
+            }
+
+            .circle {
+                height: 65px;
+                width: 65px;
+                background-color: red;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            .box{
+                height: 60px;
+                width: 60px;
+                background-color: gray;
+                display: inline-block;
+
+            }
+
+
+            #source{
+                position: relative;
+                left: 230px;
+            }
+
+            #power{
+                position:relative;
+                top: -25px;
+            }
+
+
+            a:link {
+            color: black;
+            }
+
+            /* visited link */
+            a:visited {
+            color: black;
+            }
+
+            /* mouse over link */
+            a:hover {
+            color: black;
+            text-decoration: none;
+            }
+
+            /* selected link */
+            a:active {
+            color: black;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="circle"  id="power">
+                    <i class="fas fa-power-off pl-2 pt-2" style="color: white; font-size: 47px; "></i>
+                </div>
+
+                <a class="box" href="#" id="source">
+                        <p class="pl-1">Source</p>
+                        <i class="fas fa-tv pl-2" style="color: black; font-size: 35px; position: relative; top: -20px;"></i>
+                   
+                </a>
+            </div>
+            <div class="numbers">
+
+             <div class="row1 pb-2">
+                <a class="box" job="button" href="#" id="1">
+                    <div class="pl-1" >1</div>
+               
+                </a>
+                <a class="box" href="#" id="2">
+                    <div class="pl-1">2</div>
+               
+                </a>
+                <a class="box" href="#" id="3">
+                    <div class="pl-1">3</div>
+               
+                </a>
+
+             </div>
+
+             <div class="row2 pb-2">
+                <a class="box" href="#" id="4">
+                    <div class="pl-1" >4</div>
+               
+                </a>
+                <a class="box" href="#" id="5">
+                    <div class="pl-1">5</div>
+               
+                </a>
+                <a class="box" href="#" id="6">
+                    <div class="pl-1">6</div>
+               
+                </a>
+                 
+            </div>
+
+            <div class="row3 pb-2">
+                <a class="box" href="#" id="7">
+                    <div class="pl-1" >7</div>
+               
+                </a>
+                <a class="box" href="#" id="8">
+                    <div class="pl-1">8</div>
+               
+                </a>
+                <a class="box" href="#" id="9">
+                    <div class="pl-1">9</div>
+               
+                </a>
+                 
+            </div>
+
+            <div class="row4 pb-4">
+                <a class="box" href="#" id="mute">
+                    <i class="fas fa-volume-mute pl-2 pt-3" style=" font-size: 30px;  "></i>
+               
+                </a>
+                <a class="box" href="#" id="0">
+                    <div class="pl-1">0</div>
+               
+                </a>
+                <a class="box" href="#" id="previous">
+                    <div class="pl-1" style="font-size: 17px;">PRE CH</div>
+               
+                </a>
+                 
+            </div>
+
+            </div>
+
+            <div class="adjust">
+                <div class="row1">
+                    <div class="box" id="volUP" style="background-color: lightblue; ">
+                        <p>+</p>
+                    </div>
+
+                    <div class="box ml-4" id="chUP" style="background-color: lightblue; ">
+                        <p>^</p>
+                    </div>
+                </div>
+
+                <div class="row2">
+                    <div class="box" style="background-color: lightblue; height: 30px;  font-size: 20px; position: relative; top: -20px;">
+                        <p>VOL</p>
+                    </div>
+
+                    <div class="box ml-4" style="background-color: lightblue; height: 30px; font-size: 20px;position: relative; top: -20px;">
+                        <p>CH</p>
+                    </div>
+                </div>
+
+                <div class="row3">
+                    <div class="box" id="volDOWN" style="background-color: lightblue; position: relative; top: -27px;">
+                        <p>-</p>
+                    </div>
+
+                    <div class="box ml-4" id="chDOWN" style="background-color: lightblue; position: relative; top: -27px; ">
+                        <p style="position: relative; top: -10px;">⌄</p>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="buttons">
+                <div class="row1 pb-2">
+                    <a class="box" href="#" id="espn">
+                        <div class="pl-1" >ESPN 1</div>
+                   
+                    </a>
+                    <a class="box" href="#" id="espn2">
+                        <div class="pl-1">ESPN 2 </div>
+                   
+                    </a>
+                    <a class="box" href="#" id="foxSports">
+                        <div class="pl-1">FOX Sports</div>
+                   
+                    </a>
+    
+                 </div>
+
+                 <div class="row1 pb-2">
+                    <a class="box" href="#" id="foxSportsNet">
+                        <div class="pl-1" >FOX SN</div>
+                   
+                    </a>
+                    <a class="box" href="#" id="nbcSports">
+                        <div class="pl-1">NBC Sports </div>
+                   
+                    </a>
+                    <a class="box" href="#" id="comCentral">
+                        <div class="pl-1">COM CENT</div>
+                   
+                    </a>
+    
+                 </div>
+
+            </div>
+
+
+        </div>
+
+
+     
+
+
+        
+
+    </body>
+</html>
+<script>
+ var myUrl = "http://192.168.0.25:1880/feedback";
+
+function post_my_command(event) {
+    "use strict";
+    $.ajax({type: "POST", url: myUrl, data: {code: event.data.code}});
+}
+
+function clicked(event){
+
+    setTimeout(function(){ event.classList.toggle("clicked"); }, 1000);
+}
+
+$(document).ready(function () {
+   
+    $(".box,.circle").click( function(event) {	
+        event.preventDefault();
+
+        $(this).toggleClass("clicked");
+
+        clicked(this);
+        
+
+    });
+
+    $("#power").click({ code: "P"}, post_my_command);
+    $("#mute").click({ code: "M"}, post_my_command);
+    $("#source").click({ code: "S"}, post_my_command);
+    $("#previous").click({ code: "p"}, post_my_command);
+    $("#chUP").click({ code: "C"}, post_my_command);
+    $("#chDOWN").click({ code: "X"}, post_my_command);
+    $("#volUP").click({ code: "V"}, post_my_command);
+    $("#volDOWN").click({ code: "B"}, post_my_command);
+		
+    $("#0").click({ code: "0"}, post_my_command);
+    $("#1").click({ code: "1"}, post_my_command);
+    $("#2").click({ code: "2"}, post_my_command);
+    $("#3").click({ code: "3"}, post_my_command);
+    $("#4").click({ code: "4"}, post_my_command);
+    $("#5").click({ code: "5"}, post_my_command);
+    $("#6").click({ code: "6"}, post_my_command);
+    $("#7").click({ code: "7"}, post_my_command);
+    $("#8").click({ code: "8"}, post_my_command);
+    $("#9").click({ code: "9"}, post_my_command);
+    
+    $("#espn").click({ code: "E"}, post_my_command);
+    $("#espn2").click({ code: "e"}, post_my_command);
+    $("#foxSports").click({ code: "f"}, post_my_command);
+    $("#foxSportsNet").click({ code: "x"}, post_my_command);
+    $("#nbcSports").click({ code: "n"}, post_my_command);
+    $("#comCentral").click({ code: "c"}, post_my_command);
+});   
+</script>

@@ -19,9 +19,9 @@ A "smart" ir remote that I created with a Node Red, nodeMCU, MQTT, HTML, and Jav
 
 ## Prerequisites
 
-- Node Red provides back end for our remote webpage. You can install on a raspberry PI, Docker, your local machine, etc for more info go to https://nodered.org/docs/getting-started/
+- Node Red provides back end for our remote webpage. You can install on a raspberry PI, Docker, your local machine, etc for more info go to [https://nodered.org/docs/getting-started/]
 
-- MQTT Server, a protocol for devices to communicate. There are a few ways to do this but an open source solution would be Mosquitto read more here https://mosquitto.org/
+- MQTT Server, a protocol for devices to communicate. There are a few ways to do this but an open source solution would be Mosquitto read more here [https://mosquitto.org/]
 
 - Arduino IDE, needed to upload code to nodeMCU board download [here](https://www.arduino.cc/en/main/software).
 
@@ -33,7 +33,7 @@ A "smart" ir remote that I created with a Node Red, nodeMCU, MQTT, HTML, and Jav
 
 2. Connect the IR led emitter and nodeMCU. For connecting I referenced this image.![nodeMCU with IR emitters](https://raw.githubusercontent.com/JZ-SmartThings/SmartThings/master/Devices/TVDevice/3.3V%20PICTURES%20%26%20WIRING/IRSender.png)
 
-3. Open arduino IDE, If you havent used a NodeMCU board before you will need to go File > Preferences and paste https://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Boards Manager and click OK. Then click Tools > Boards > ESP8266 Boards and make sure NodeMCU 1.0 ESP 12-E is selected and then Tools > Port and make sure correct COM Port is selected.
+3. Open arduino IDE, If you havent used a NodeMCU board before you will need to go File > Preferences and paste [https://arduino.esp8266.com/stable/package_esp8266com_index.json] into the Additional Boards Manager and click OK. Then click Tools > Boards > ESP8266 Boards and make sure NodeMCU 1.0 ESP 12-E is selected and then Tools > Port and make sure correct COM Port is selected.
 
 4. Now go to File > Open and open the irRemoteNodeMCU.INO included in the repository. You will need to add your wireless network credentials, and also the IP of you MQTT server. If you would like to make your own ir codes you can make changes to this file as well. Then upload the program to board.
 
@@ -41,7 +41,7 @@ A "smart" ir remote that I created with a Node Red, nodeMCU, MQTT, HTML, and Jav
 
 6. Double click on the template at the top of the flow, now scroll to line 280 of the HTML and add the location of your node Red server. You would also need to make changes to bottom buttons to direct to your favorite channels. You can edit the file more easily through the remote.html included in the repo then paste into the template once changes are made, you would also need to make changes on functions in the nodeMCU file as well. Now click the red Deploy button at the top right of the page.
 
-7. If everything is configured correctly you should be able to mount the nodeMCU near your TV, if your TV has a usb you can use that or you can plug into a 5v power supply. Now go to http://LOCATION_OF_NODE_RED/remote and try to control TV.
+7. If everything is configured correctly you should be able to mount the nodeMCU near your TV, if your TV has a usb you can use that or you can plug into a 5v power supply. Now go to [http://LOCATION_OF_NODE_RED/remote] and try to control TV.
 
 ## HOW IT WORKS
 

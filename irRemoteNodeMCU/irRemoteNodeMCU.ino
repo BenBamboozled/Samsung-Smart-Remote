@@ -27,7 +27,7 @@ uint16_t tvSix[] = {4350,4650,400,1800,400,1850,400,1850,400,700,400,700,400,700
 uint16_t tvSeven[] = {4350,4650,400,1850,400,1800,400,1850,400,700,400,700,400,750,400,700,400,700,400,1850,400,1850,400,1800,400,750,400,700,400,700,400,700,450,700,400,700,450,650,400,1850,400,1850,400,700,400,700,400,750,400,700,400,1850,400,1800,400,700,400,750,400,1800,450,1800,450,1800,400,1800,400};
 uint16_t tvEight[] =  {4350,4600,400,1850,400,1850,400,1800,400,750,400,700,400,700,400,700,400,750,400,1800,400,1850,450,1800,400,700,400,700,400,750,400,700,400,700,450,1800,400,700,450,1800,400,1800,400,750,400,700,400,700,450,700,400,700,400,1800,400,750,400,700,400,1850,400,1800,400,1850,400,1850,400};     
 uint16_t tvNine[] = {4350,4650,350,1850,400,1850,400,1800,400,750,400,700,400,700,400,750,400,700,400,1850,400,1800,400,1850,400,700,400,700,400,750,400,700,400,700,450,700,400,1800,400,1850,400,1850,350,750,400,700,400,700,400,750,400,1800,400,750,400,700,400,700,400,1850,400,1850,350,1850,400,1850,400};
-uint16_t fanPower[] = {2100,950,600,1700,600,1750,550,1000,600,950,600,950,550,1000,550,950,600,1000,600,1000,600,950,600,950,600,950,600,950,550,1000,550,950,600};
+
 #define MQTT_SERVER "IP OF MQTT SERVER"
 const char* ssid = "NETWORK_SSID";
 const char* password = "NETWORK_PASSWORD";
@@ -104,64 +104,62 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if(payload[0] == 'M'){ //mute
     irsend.sendRaw(tvMute, sizeof(tvMute) / sizeof(tvMute[0]), khz);
   }  
-  if(payload[0] == 'p'){
+  if(payload[0] == 'p'){ //previous channel
     irsend.sendRaw(tvPrevious, sizeof(tvPrevious) / sizeof(tvPrevious[0]), khz); //Note the approach used to automatically calculate the size of the array.
   }
 
-  if(payload[0] == '0'){ //channel up
+  if(payload[0] == '0'){ //0
     irsend.sendRaw(tvZero, sizeof(tvZero) / sizeof(tvZero[0]), khz); 
   }  
 
-  if(payload[0] == '1'){ //channel up
+  if(payload[0] == '1'){ //1
     irsend.sendRaw(tvOne, sizeof(tvOne) / sizeof(tvOne[0]), khz); 
   }  
 
-  if(payload[0] == '2'){ //channel up
+  if(payload[0] == '2'){ //2
     irsend.sendRaw(tvTwo, sizeof(tvTwo) / sizeof(tvTwo[0]), khz); 
   }
 
-  if(payload[0] == '3'){ //channel up
+  if(payload[0] == '3'){ //3
     irsend.sendRaw(tvThree, sizeof(tvThree) / sizeof(tvThree[0]), khz); 
   }  
 
-  if(payload[0] == '4'){ //channel up
+  if(payload[0] == '4'){ //4
     irsend.sendRaw(tvFour, sizeof(tvFour) / sizeof(tvFour[0]), khz); 
   }
-  if(payload[0] == '5'){ //channel up
+  if(payload[0] == '5'){ //5
     irsend.sendRaw(tvFive, sizeof(tvFive) / sizeof(tvFive[0]), khz); 
   }
-  if(payload[0] == '6'){ //channel up
+  if(payload[0] == '6'){ //6
     irsend.sendRaw(tvSix, sizeof(tvSix) / sizeof(tvSix[0]), khz); 
   }
-  if(payload[0] == '7'){ //channel up
+  if(payload[0] == '7'){ //7
     irsend.sendRaw(tvSeven, sizeof(tvSeven) / sizeof(tvSeven[0]), khz); 
   }
-  if(payload[0] == '8'){ //channel up
+  if(payload[0] == '8'){ //8
     irsend.sendRaw(tvEight, sizeof(tvEight) / sizeof(tvEight[0]), khz); 
   }
-  if(payload[0] == '9'){ //channel up
+  if(payload[0] == '9'){ //9
     irsend.sendRaw(tvNine, sizeof(tvNine) / sizeof(tvNine[0]), khz); 
   }
-  if(payload[0] == 'F'){ //channel up
-    irsend.sendRaw(fanPower, sizeof(fanPower) / sizeof(fanPower[0]), khz); 
-  }
-  if(payload[0] == 'E'){ //channel up
+
+  if(payload[0] == 'E'){ //espn 
     espn();
   }
-  if(payload[0] == 'e'){ //channel up
+  if(payload[0] == 'e'){ //espn 2
     espn2();
   }
   
-  if(payload[0] == 'f'){ //channel up
+  if(payload[0] == 'f'){ //fox Sports
     foxSports();
   }
-  if(payload[0] == 'x' ){ //channel up
+  if(payload[0] == 'x' ){ // fox sports net 
     foxSportsNet();
   }
-  if(payload[0] == 'n'){ //channel up
+  if(payload[0] == 'n'){  //nbc sports
     nbcSports();
   }
-  if(payload[0] == 'c'){ //channel up
+  if(payload[0] == 'c'){ //comedy central
     comCentral();
   }
   
